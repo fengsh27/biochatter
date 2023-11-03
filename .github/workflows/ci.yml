@@ -40,7 +40,6 @@ jobs:
       - name: Set API key
         run: |
           echo ${{ secrets.OPENAI_API_KEY }} > api_key.txt
-          cat api_key.txt
 
       - name: Set environment variable
         run: |
