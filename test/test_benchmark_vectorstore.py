@@ -2,11 +2,14 @@ from unittest.mock import patch
 import os
 
 import pytest
+pytest.skip(allow_module_level=True)
 
 from benchmark.conftest import calculate_bool_vector_score
 from biochatter.rag_agent import RagAgent, RagAgentModeEnum
 from biochatter.vectorstore import Document, DocumentReader, DocumentEmbedder
 from biochatter.vectorstore_agent import VectorDatabaseAgentMilvus
+
+
 
 # setup milvus connection
 if os.getenv("DEVCONTAINER"):

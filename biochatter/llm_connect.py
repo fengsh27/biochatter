@@ -17,7 +17,7 @@ import logging
 
 from langchain.llms import HuggingFaceHub
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
-from langchain.chat_models import ChatOpenAI, AzureChatOpenAI
+from langchain_openai import AzureChatOpenAI, ChatOpenAI
 import nltk
 import openai
 

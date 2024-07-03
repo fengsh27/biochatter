@@ -1,20 +1,24 @@
-from typing import Optional
-import os
-import json
-
+from typing import Optional, Callable
 import yaml
-
-from ._misc import ensure_iterable, sentencecase_to_pascalcase
+import json
+import os
+from ._misc import sentencecase_to_pascalcase, sentencecase_to_snakecase, ensure_iterable
 from .llm_connect import Conversation, GptConversation
+from .kg_langgraph_agent import KGLangGraphAgent
 
+def snake_name_transfomer(name: str) -> str:
+    name = name.strip()
+    return name.replace(" ", "_")
 
 class BioCypherPromptEngine:
     def __init__(
         self,
         schema_config_or_info_path: Optional[str] = None,
         schema_config_or_info_dict: Optional[dict] = None,
+        snake_name: Optional[bool] = False,
         model_name: str = "gpt-3.5-turbo",
         conversation_factory: Optional[callable] = None,
+        langgraph_agent: Optional[KGLangGraphAgent] = None,
     ) -> None:
         """
 
@@ -42,7 +46,12 @@ class BioCypherPromptEngine:
                 creating the KG query. If not provided, a default function is
                 used (creating an OpenAI conversation with the specified model,
                 see `_get_conversation`).
+
+            langgraph_agent: LangGraph Agent to help generate query 
         """
+        name_transformer = ( 
+            sentencecase_to_pascalcase if not snake_name else snake_name_transfomer
+        )
 
         if not schema_config_or_info_path and not schema_config_or_info_dict:
             raise ValueError(
@@ -89,18 +98,19 @@ class BioCypherPromptEngine:
                         value["represented_as"] == "node"
                         and not name_indicates_relationship
                     ):
-                        self.entities[sentencecase_to_pascalcase(key)] = value
+                        self.entities[name_transformer(key)] = value
                     elif (
                         value["represented_as"] == "node"
                         and name_indicates_relationship
                     ):
-                        self.relationships[
-                            sentencecase_to_pascalcase(key)
-                        ] = value
+                        self.relationships[sentencecase_to_pascalcase(key)] = (
+                            value
+                        )
                     elif value["represented_as"] == "edge":
-                        self.relationships[
-                            sentencecase_to_pascalcase(key)
-                        ] = value
+                        value = self._capitalise_source_and_target(value, name_transformer)
+                        self.relationships[sentencecase_to_pascalcase(key)] = (
+                            value
+                        )
         else:
             for key, value in schema_config.items():
                 if not isinstance(value, dict):
@@ -108,9 +118,9 @@ class BioCypherPromptEngine:
                 if value.get("present_in_knowledge_graph", None) == False:
                     continue
                 if value.get("is_relationship", None) == False:
-                    self.entities[sentencecase_to_pascalcase(key)] = value
+                    self.entities[name_transformer(key)] = value
                 elif value.get("is_relationship", None) == True:
-                    value = self._capitalise_source_and_target(value)
+                    value = self._capitalise_source_and_target(value, name_transformer)
                     self.relationships[sentencecase_to_pascalcase(key)] = value
 
         self.question = ""
@@ -121,30 +131,35 @@ class BioCypherPromptEngine:
         # dictionary to also include source and target types
         self.rel_directions = {}
         self.model_name = model_name
+        self.langgraph_agent = langgraph_agent
 
-    def _capitalise_source_and_target(self, relationship: dict) -> dict:
+    def _capitalise_source_and_target(
+            self, 
+            relationship: dict, 
+            name_transformer: Callable[[str], str]
+        ) -> dict:
         """
         Make sources and targets PascalCase to match the entities. Sources and
         targets can be strings or lists of strings.
         """
         if "source" in relationship:
             if isinstance(relationship["source"], str):
-                relationship["source"] = sentencecase_to_pascalcase(
+                relationship["source"] = name_transformer(
                     relationship["source"]
                 )
             elif isinstance(relationship["source"], list):
                 relationship["source"] = [
-                    sentencecase_to_pascalcase(s)
+                    name_transformer(s)
                     for s in relationship["source"]
                 ]
         if "target" in relationship:
             if isinstance(relationship["target"], str):
-                relationship["target"] = sentencecase_to_pascalcase(
+                relationship["target"] = name_transformer(
                     relationship["target"]
                 )
             elif isinstance(relationship["target"], list):
                 relationship["target"] = [
-                    sentencecase_to_pascalcase(t)
+                    name_transformer(t)
                     for t in relationship["target"]
                 ]
         return relationship
@@ -250,11 +265,10 @@ class BioCypherPromptEngine:
         conversation.append_system_message(
             (
                 "You have access to a knowledge graph that contains "
-                f"these entity types: {', '.join(self.entities)}. Your task is "
-                "to select the entity types that are relevant to the user's question "
-                "for subsequent use in a query. Only return the entity types, "
-                "comma-separated, without any additional text. Do not return "
-                "entity names, relationships, or properties."
+                f"these entities: {', '.join(self.entities)}. Your task is "
+                "to select the ones that are relevant to the user's question "
+                "for subsequent use in a query. Only return the entities, "
+                "comma-separated, without any additional text. "
             )
         )
 
@@ -410,13 +424,9 @@ class BioCypherPromptEngine:
                 sources = ensure_iterable(value["source"])
                 targets = ensure_iterable(value["target"])
                 for source in sources:
-                    if source is None:
-                        continue
                     if source not in self.selected_entities:
                         self.selected_entities.append(source)
                 for target in targets:
-                    if target is None:
-                        continue
                     if target not in self.selected_entities:
                         self.selected_entities.append(target)
 
@@ -495,6 +505,7 @@ class BioCypherPromptEngine:
         properties: dict,
         query_language: str,
         conversation: "Conversation",
+        prompt_msg_only: Optional[bool] = False,
     ) -> str:
         """
         Generate a query in the specified query language that answers the user's
@@ -534,16 +545,20 @@ class BioCypherPromptEngine:
             msg += "Given the following valid combinations of source, relationship, and target: "
             for key, value in self.rel_directions.items():
                 for pair in value:
-                    msg += f"'(:{pair[0]})-(:{key})->(:{pair[1]})', "
-            msg += f"generate a {query_language} query using one of these combinations. "
+                    msg += f"'(g:{pair[0]})-(r:{key})->(c:{pair[1]})', "
+            msg += f"generate a {query_language} query using one of these combinations. Note: Please limit distinct result to 5."
 
         msg += "Only return the query, without any additional text."
 
-        conversation.append_system_message(msg)
-
-        out_msg, token_usage, correction = conversation.query(question)
-
-        return out_msg.strip()
+        if prompt_msg_only:
+            return msg
+        
+        if not self.langgraph_agent:
+            conversation.append_system_message(msg)
+            out_msg, token_usage, correction = conversation.query(question)
+            return out_msg.strip()
+        
+        
 
     def _expand_pairs(self, relationship, values) -> None:
         if not self.rel_directions.get(relationship):

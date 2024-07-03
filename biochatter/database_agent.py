@@ -4,6 +4,7 @@ from langchain.schema import Document
 import neo4j_utils as nu
 
 from .prompts import BioCypherPromptEngine
+from .kg_langgraph_agent import KGLangGraphAgent
 
 
 class DatabaseAgent:
@@ -26,10 +27,15 @@ class DatabaseAgent:
             conversation_factory (callable): A function to create a conversation
                 for creating the KG query.
         """
+        self.langgraph_agent = KGLangGraphAgent(
+            connection_args=connection_args,
+            conversation_factory=conversation_factory,
+        )
         self.prompt_engine = BioCypherPromptEngine(
             model_name=model_name,
             schema_config_or_info_dict=schema_config_or_info_dict,
             conversation_factory=conversation_factory,
+            langgraph_agent=self.langgraph_agent
         )
         self.connection_args = connection_args
         self.driver = None

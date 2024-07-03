@@ -1,0 +1,1322 @@
+gene:
+    represented_as: node
+    input_label: gene
+    is_a: code elements
+    properties:
+        chr: str
+        start_loc: int
+        end_loc: int
+        data_version: str
+        link: str
+        description: str
+        gencode_annotation: str
+        id_version: int
+        type: str
+        data_source: str
+        strand: int
+        name: str
+        id: str
+        GC_percentage: float
+        
+exon:
+    represented_as: node
+    input_label: exon
+    is_a: code elements
+    properties:
+        data_version: str
+        link: str
+        id: str
+        data_source: str
+        
+protein:
+    represented_as: node
+    input_label: protein
+    is_a: code elements
+    properties:
+        data_version: str
+        link: str
+        id: str
+        id_version: int
+        data_source: str
+        
+transcript:
+    represented_as: node
+    input_label: transcript
+    is_a: code elements
+    properties:
+        chr: str
+        start_loc: int
+        end_loc: int
+        data_version: str
+        link: str
+        count: int
+        trans_length: int
+        id_version: int
+        type: str
+        data_source: str
+        tss: int
+        name: str
+        id: str
+        
+ChromHMM state:
+    represented_as: node
+    input_label: ChromHMM_state
+    is_a: epigenomic fetures
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        tissue_id: str
+        tissue_name: str
+        data_version: str
+        link: str
+        state: str
+        data_source: str
+        
+DNase hypersensitivity site:
+    represented_as: node
+    input_label: DNase_hypersensitivity_site
+    is_a: epigenomic fetures
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        p_value: int
+        tissue_name: str
+        data_version: str
+        link: str
+        q_value: int
+        accession: str
+        type: str
+        assay_name: str
+        data_source: str
+        signal_value: int
+        tissue_id: str
+        id: str
+        
+TF binding motif:
+    represented_as: node
+    input_label: TF_binding_motif
+    is_a: epigenomic fetures
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        score: float
+        strand: int
+        TF_name: str
+        data_version: str
+        TF_id: str
+        data_source: str
+        primary: str
+        
+TF binding site:
+    represented_as: node
+    input_label: TF_binding_site
+    is_a: epigenomic fetures
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        p_value: int
+        tissue_name: str
+        data_version: str
+        link: str
+        q_value: float
+        accession: str
+        type: str
+        assay_name: str
+        data_source: str
+        signal_value: float
+        tissue_id: str
+        id: str
+        
+histone modification site:
+    represented_as: node
+    input_label: histone_modification_site
+    is_a: epigenomic fetures
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        p_value: float
+        tissue_name: str
+        data_version: str
+        link: str
+        q_value: float
+        accession: str
+        type: str
+        assay_name: str
+        data_source: str
+        signal_value: float
+        tissue_id: str
+        id: str
+        
+replication timing:
+    represented_as: node
+    input_label: replication_timing
+    is_a: epigenomic fetures
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        early_or_late: str
+        link_late: str
+        tissue_name: str
+        data_version: str
+        data_source: str
+        accession_late: str
+        tissue_id: str
+        accession_early: str
+        link_early: str
+        
+enhancer:
+    represented_as: node
+    input_label: enhancer
+    is_a: non coding elements
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        high_or_low_throughput: str
+        function_experiment: str
+        tissue_name: str
+        disease: str
+        data_version: str
+        Pubmed_id: int
+        link: str
+        enhancer_experiment: str
+        data_source: str
+        tissue_id: str
+        distance_from_TSS: str
+        function: str
+        
+distal enhancer:
+    represented_as: node
+    input_label: distal_enhancer
+    is_a: [enhancer, non coding elements, promoter, insulator]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        tissue_id: str
+        tissue_name: str
+        data_version: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        
+proximal enhancer:
+    represented_as: node
+    input_label: proximal_enhancer
+    is_a: [enhancer, non coding elements, promoter, insulator]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        tissue_id: str
+        tissue_name: str
+        data_version: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        
+insulator:
+    represented_as: node
+    input_label: insulator
+    is_a: [non coding elements, promoter]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        tissue_id: str
+        tissue_name: str
+        data_version: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        
+non coding RNA:
+    represented_as: node
+    input_label: non_coding_RNA
+    is_a: non coding elements
+    properties:
+        chr: str
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        RFam_function: str
+        id: str
+        type: str
+        Rfam_ID: str
+        data_source: str
+        
+RNase MRP RNA:
+    represented_as: node
+    input_label: RNase_MRP_RNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        RFam_function: str
+        id: str
+        type: str
+        Rfam_ID: str
+        data_source: str
+        
+RNase P RNA:
+    represented_as: node
+    input_label: RNase_P_RNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        RFam_function: str
+        id: str
+        type: str
+        Rfam_ID: str
+        data_source: str
+        
+SRP RNA:
+    represented_as: node
+    input_label: SRP_RNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        RFam_function: str
+        id: str
+        type: str
+        Rfam_ID: str
+        data_source: str
+        
+Y RNA:
+    represented_as: node
+    input_label: Y_RNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        RFam_function: str
+        id: str
+        type: str
+        Rfam_ID: str
+        data_source: str
+        
+ncRNA:
+    represented_as: node
+    input_label: ncRNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        RFam_function: str
+        id: str
+        type: str
+        Rfam_ID: str
+        data_source: str
+        
+pre miRNA:
+    represented_as: node
+    input_label: pre_miRNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        RFam_function: str
+        id: str
+        type: str
+        Rfam_ID: str
+        data_source: str
+        
+rRNA:
+    represented_as: node
+    input_label: rRNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        RFam_function: str
+        id: str
+        type: str
+        Rfam_ID: str
+        data_source: str
+        
+scaRNA:
+    represented_as: node
+    input_label: scaRNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        RFam_function: str
+        id: str
+        type: str
+        Rfam_ID: str
+        data_source: str
+        
+scRNA:
+    represented_as: node
+    input_label: scRNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        RFam_function: str
+        id: str
+        type: str
+        Rfam_ID: str
+        data_source: str
+        
+snoRNA:
+    represented_as: node
+    input_label: snoRNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        RFam_function: str
+        id: str
+        type: str
+        Rfam_ID: str
+        data_source: str
+        
+telomerase RNA:
+    represented_as: node
+    input_label: telomerase_RNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        RFam_function: str
+        id: str
+        type: str
+        Rfam_ID: str
+        data_source: str
+        
+antisense RNA:
+    represented_as: node
+    input_label: antisense_RNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        
+miRNA:
+    represented_as: node
+    input_label: miRNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        
+misc RNA:
+    represented_as: node
+    input_label: misc_RNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        
+piRNA:
+    represented_as: node
+    input_label: piRNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        
+precursor RNA:
+    represented_as: node
+    input_label: precursor_RNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        
+ribozyme:
+    represented_as: node
+    input_label: ribozyme
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        
+sRNA:
+    represented_as: node
+    input_label: sRNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        
+snRNA:
+    represented_as: node
+    input_label: snRNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        
+tRNA:
+    represented_as: node
+    input_label: tRNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        
+vault RNA:
+    represented_as: node
+    input_label: vault_RNA
+    is_a: [non coding RNA, non coding elements]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        _from: str
+        data_version: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        
+promoter:
+    represented_as: node
+    input_label: promoter
+    is_a: non coding elements
+    properties:
+        
+super enhancer:
+    represented_as: node
+    input_label: super_enhancer
+    is_a: non coding elements
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        tissue_id: str
+        tissue_name: str
+        data_version: str
+        id: str
+        data_source: str
+        
+cell line or tissue:
+    represented_as: node
+    input_label: cell_line_or_tissue
+    is_a: [phenotype or disease, ontology]
+    properties:
+        data_version: str
+        link: str
+        id: str
+        type: str
+        all_labels: str
+        data_source: str
+        _label: str
+        url: str
+        
+phenotype or disease:
+    represented_as: node
+    input_label: phenotype_or_disease
+    is_a: ontology
+    properties:
+        data_version: str
+        synonyms: str
+        link: str
+        id: str
+        type: str
+        all_labels: str
+        _label: str
+        data_source: str
+        url: str
+        
+gene ontology:
+    represented_as: node
+    input_label: gene_ontology
+    is_a: ontology
+    properties:
+        data_version: str
+        link: str
+        definition: str
+        id: str
+        type: str
+        all_labels: str
+        data_source: str
+        _label: str
+        url: str
+        
+AB compartment:
+    represented_as: node
+    input_label: AB_compartment
+    is_a: threeD structures
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        tissue_id: str
+        tissue_name: str
+        data_version: str
+        compartment: str
+        link: str
+        accession: str
+        data_source: str
+        
+FIRE region:
+    represented_as: node
+    input_label: FIRE_region
+    is_a: threeD structures
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        score: float
+        tissue_id: str
+        tissue_name: str
+        data_version: str
+        link: str
+        data_source: str
+        
+TAD:
+    represented_as: node
+    input_label: TAD
+    is_a: threeD structures
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        score: float
+        tissue_id: str
+        tissue_name: str
+        data_version: str
+        link: str
+        accession: str
+        data_source: str
+        
+loop:
+    represented_as: node
+    input_label: loop
+    is_a: threeD structures
+    properties:
+        chr: int
+        tissue_name: str
+        data_version: str
+        link: str
+        anchor1_start_loc: int
+        accession: str
+        fdrV: float
+        data_source: str
+        fdrDonut: float
+        anchor2_end_loc: int
+        anchor2_start_loc: int
+        fdrBL: float
+        tissue_id: str
+        centroid2: int
+        centroid1: int
+        fdrH: float
+        
+sequence variant:
+    represented_as: node
+    input_label: sequence_variant
+    is_a: variants
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        in_donor_splice_site: bool
+        non_synonymous_missense: bool
+        data_version: str
+        freq: str
+        link: str
+        type: str
+        non_synonymous_nonsense: bool
+        ref: str
+        in_5prime_gene_region: bool
+        id: str
+        in_5prime_UTR: bool
+        common_SNP: bool
+        
+deletion:
+    represented_as: node
+    input_label: deletion
+    is_a: [variants, variant deletion, sequence variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        in_donor_splice_site: bool
+        non_synonymous_missense: bool
+        data_version: str
+        freq: str
+        link: str
+        type: str
+        non_synonymous_nonsense: bool
+        ref: str
+        in_5prime_gene_region: bool
+        id: str
+        in_5prime_UTR: bool
+        common_SNP: bool
+        non_synonymous_frameshift: bool
+        
+indel:
+    represented_as: node
+    input_label: indel
+    is_a: [variants, variant deletion, sequence insertion, sequence variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        in_donor_splice_site: bool
+        non_synonymous_missense: bool
+        data_version: str
+        freq: str
+        link: str
+        type: str
+        non_synonymous_nonsense: bool
+        ref: str
+        in_5prime_gene_region: bool
+        id: str
+        in_5prime_UTR: bool
+        common_SNP: bool
+        
+insertion:
+    represented_as: node
+    input_label: insertion
+    is_a: [variants, structural variant, sequence variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        data_version: str
+        length: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        frequency: float
+        
+mnv:
+    represented_as: node
+    input_label: mnv
+    is_a: [variants, sequence variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        in_donor_splice_site: bool
+        non_synonymous_missense: bool
+        data_version: str
+        freq: str
+        link: str
+        type: str
+        non_synonymous_nonsense: bool
+        ref: str
+        in_5prime_gene_region: bool
+        id: str
+        in_5prime_UTR: bool
+        common_SNP: bool
+        non_synonymous_frameshift: bool
+        
+sequcne SNP:
+    represented_as: node
+    input_label: sequcne_SNP
+    is_a: [variants, sequence variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        in_donor_splice_site: bool
+        non_synonymous_missense: bool
+        data_version: str
+        freq: str
+        link: str
+        type: str
+        non_synonymous_nonsense: bool
+        ref: str
+        in_5prime_gene_region: bool
+        id: str
+        
+variant deletion:
+    represented_as: node
+    input_label: variant_deletion
+    is_a: [variants, sequence variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        ref: str
+        data_version: str
+        alt: str
+        link: str
+        id: str
+        data_source: str
+        
+sequence insertion:
+    represented_as: node
+    input_label: sequence_insertion
+    is_a: [variants, sequence variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        in_donor_splice_site: bool
+        non_synonymous_missense: bool
+        data_version: str
+        freq: str
+        link: str
+        type: str
+        non_synonymous_nonsense: bool
+        ref: str
+        in_5prime_gene_region: bool
+        id: str
+        in_5prime_UTR: bool
+        common_SNP: bool
+        
+snp:
+    represented_as: node
+    input_label: snp
+    is_a: [variants, sequence variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        in_donor_splice_site: bool
+        non_synonymous_missense: bool
+        data_version: str
+        freq: str
+        link: str
+        type: str
+        non_synonymous_nonsense: bool
+        ref: str
+        in_5prime_gene_region: bool
+        id: str
+        in_5prime_UTR: bool
+        common_SNP: bool
+        
+structural variant:
+    represented_as: node
+    input_label: structural_variant
+    is_a: variants
+    properties:
+        
+copy number variantion:
+    represented_as: node
+    input_label: copy_number_variantion
+    is_a: [variants, structural variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        data_version: str
+        length: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        frequency: float
+        
+copy number loss:
+    represented_as: node
+    input_label: copy_number_loss
+    is_a: [variants, copy number variantion, structural variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        data_version: str
+        length: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        frequency: float
+        
+copy number gain:
+    represented_as: node
+    input_label: copy_number_gain
+    is_a: [variants, copy number variantion, structural variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        data_version: str
+        length: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        frequency: float
+        
+gain loss:
+    represented_as: node
+    input_label: gain_loss
+    is_a: [variants, structural variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        pubmed_id: int
+        reference: str
+        method: str
+        data_version: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        
+insertion:
+    represented_as: node
+    input_label: insertion
+    is_a: [variants, structural variant, sequence variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        data_version: str
+        length: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        frequency: float
+        
+mobile element deletion:
+    represented_as: node
+    input_label: mobile_element_deletion
+    is_a: [variants, structural variant]
+    properties:
+        
+alu deletion:
+    represented_as: node
+    input_label: alu_deletion
+    is_a: [variants, structural variant, mobile element deletion]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        data_version: str
+        length: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        frequency: float
+        
+sva deletion:
+    represented_as: node
+    input_label: sva_deletion
+    is_a: [variants, structural variant, mobile element deletion]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        data_version: str
+        length: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        frequency: float
+        
+herv deletion:
+    represented_as: node
+    input_label: herv_deletion
+    is_a: [variants, structural variant, mobile element deletion]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        pubmed_id: int
+        reference: str
+        method: str
+        data_version: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        
+line1 deletion:
+    represented_as: node
+    input_label: line1_deletion
+    is_a: [variants, structural variant, mobile element deletion]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        data_version: str
+        length: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        frequency: float
+        
+mobile element insertion:
+    represented_as: node
+    input_label: mobile_element_insertion
+    is_a: structual variant
+    properties:
+        
+alu insertion:
+    represented_as: node
+    input_label: alu_insertion
+    is_a: [mobile element insertion, structual variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        data_version: str
+        length: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        frequency: float
+        
+sva insertion:
+    represented_as: node
+    input_label: sva_insertion
+    is_a: [mobile element insertion, structual variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        data_version: str
+        length: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        frequency: float
+        
+line1 insertion:
+    represented_as: node
+    input_label: line1_insertion
+    is_a: [mobile element insertion, structual variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        data_version: str
+        length: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        frequency: float
+        
+herv insertion:
+    represented_as: node
+    input_label: herv_insertion
+    is_a: [mobile element insertion, structual variant]
+    properties:
+        chr: int
+        start_loc: int
+        end_loc: int
+        pubmed_id: int
+        reference: str
+        method: str
+        data_version: str
+        link: str
+        id: str
+        type: str
+        data_source: str
+        
+chr chain:
+    represented_as: node
+    input_label: chr_chain
+    properties:
+        id: str
+        chr: str
+        start_loc: int
+        end_loc: int
+        resolution: int
+        
+# associations
+express in:
+    represented_as: edge
+    input_label: express_in
+    label_as_edge: express_in
+    source: gene
+    target: cell line or tissue
+    properties:
+        tpm: float
+        data_source: str
+
+GWAS association:
+    represented_as: edge
+    input_label: GWAS_association
+    label_as_edge: GWAS_association
+    source: non coding RNA
+    target: gene ontology
+    properties:
+        risk_allele: str
+        pubmed_id: str
+        risk_frequency: float
+        mlog_pvalue: float
+        intergenic: bool
+        context: str
+        accession: str
+        data_source: str
+
+belong to:
+    represented_as: edge
+    input_label: belong_to
+    label_as_edge: belong_to
+    source: sequcne variant
+    target: gene
+    properties:
+        data_source: str
+
+correlated with:
+    represented_as: edge
+    input_label: correlated_with
+    label_as_edge: correlated_with
+    source: sequcne variant
+    target: gene
+    properties:
+        tissue_id: str
+        slope_standard_error: float
+        pval_nominal: float
+        tissue_name: str
+        distance: int
+        slope: float
+        pval_nominal_threshold: float
+        data_source: str
+
+eQTL of:
+    represented_as: edge
+    input_label: eQTL_of
+    label_as_edge: eQTL_of
+    source: sequcne variant
+    target: gene
+    properties:
+        tissue_id: str
+        slope_standard_error: float
+        pval_nominal: float
+        tissue_name: str
+        distance: int
+        slope: float
+        pval_nominal_threshold: float
+        data_source: str
+    
+function annotation:
+    represented_as: edge
+    input_label: function_annotation
+    label_as_edge: function_annotation
+    source: [gene, non coding RNA]
+    target: gene ontology
+    
+include:
+    represented_as: edge
+    input_label: include
+    label_as_edge: include
+    source: transcript
+    target: exon
+    
+ligand receptor pair:
+    represented_as: edge
+    input_label: ligand_receptor_pair
+    label_as_edge: ligand_receptor_pair
+    source: gene
+    target: gene
+    properties:
+        source_protein_info: str
+        source_protein_name: str
+        target_protein_info: str
+        id: str
+        data_source: str
+        original_source: str
+        annotation_method: str
+    
+locate on chain:
+    represented_as: edge
+    input_label: locate_on_chain
+    label_as_edge: locate_on_chain
+    source: copy number loss
+    target: chr chain
+    
+lower resolution:
+    represented_as: edge
+    input_label: lower_resolution
+    label_as_edge: lower_resolution
+    source: chr chain
+    target: chr chain
+    
+next loc:
+    represented_as: edge
+    input_label: next_loc
+    label_as_edge: next_loc
+    source: chr chain
+    target: chr chain
+    
+protein interaction:
+    represented_as: edge
+    input_label: protein_interaction
+    label_as_edge: protein_interaction
+    source: gene
+    target: gene
+    properties:
+        consensus_stimulation: bool
+        curation_effort: int
+        is_stimulation: bool
+        references: str
+        consensus_direction: bool
+        is_directed: bool
+        is_inhibition: bool
+        consensus_inhibition: bool
+        data_source: str
+        original_sources: str
+
+regulate:
+    represented_as: edge
+    input_label: regulate
+    label_as_edge: regulate
+    source: [gene, enhancer]
+    target: [gene, enhancer]
+    properties:
+        tissue_id: str
+        tissue_name: str
+        weak_experiments: str
+        strong_experiments: str
+        data_source: str
+    
+subclass of:
+    represented_as: edge
+    input_label: subclass_of
+    label_as_edge: subclass_of
+    source: ontology
+    target: ontology
+    
+transcribe into:
+    represented_as: edge
+    input_label: transcribe_into
+    label_as_edge: transcribe_into
+    source: gene
+    target: transcript
+    properties:
+        data_source: str
+    
+translate into:
+    represented_as: edge
+    input_label: translate_into
+    label_as_edge: translate_into
+    source: transcript
+    target: protein
+
+
+
+
+
+
