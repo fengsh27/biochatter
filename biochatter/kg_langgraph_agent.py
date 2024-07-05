@@ -193,10 +193,7 @@ Current time {time}
             runnable=initial_answer_chain,
             validator=validator,
         )
-        first_responder.respond([HumanMessage(
-            content=question
-        )])
-
+        
         revise_instruction = """
 Revise you previous query using the query result and follow the guidelines:
 1. if you consistently obtain empty result, please consider removing constraints, like relationship constraint to try to obtain some results.
