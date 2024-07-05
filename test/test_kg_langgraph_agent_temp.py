@@ -61,9 +61,9 @@ def prompt_engine():
     )
 
 def test_KGLangGraphAgent(prompt_engine):
-    question = "It’s odd for a transcription factor to be regulating both stemness of a cell and cytotoxic potential. Which of these is the primary function \
-        of EOMES and which is secondary?"
-    # question="What genes does EOMES primarily regulate?"
+    # question = "It’s odd for a transcription factor to be regulating both stemness of a cell and cytotoxic potential. Which of these is the primary function \
+    #     of EOMES and which is secondary?"
+    question="What genes does EOMES primarily regulate?"
     # question = "What transcription factor likely regulate the expression of gene LRRC32?"
     connection_args= dict()
     connection_args["host"] = os.environ.get("GRAPH_DB_HOST")

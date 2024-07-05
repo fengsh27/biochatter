@@ -2,12 +2,12 @@ from typing import Optional
 
 from transformers import GPT2TokenizerFast
 from langchain.schema import Document
-from langchain.embeddings import XinferenceEmbeddings
-from langchain.vectorstores import Milvus
+from langchain_community.embeddings import XinferenceEmbeddings
+from langchain_community.vectorstores import Milvus
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.document_loaders import TextLoader
-from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.embeddings.azure_openai import AzureOpenAIEmbeddings
+from langchain_community.document_loaders import TextLoader
+from langchain_community.embeddings.openai import OpenAIEmbeddings
+from langchain_community.embeddings.azure_openai import AzureOpenAIEmbeddings
 import fitz  # this is PyMuPDF (PyPI pymupdf package, not fitz)
 import openai
 

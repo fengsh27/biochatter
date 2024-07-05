@@ -15,7 +15,7 @@ from typing import Optional
 import json
 import logging
 
-from langchain.llms import HuggingFaceHub
+from langchain_community.llms import HuggingFaceHub
 from langchain.schema import AIMessage, HumanMessage, SystemMessage
 from langchain_openai import AzureChatOpenAI, ChatOpenAI
 import nltk

@@ -6,7 +6,6 @@ import logging
 
 from biochatter.kg_langgraph_agent import (
     KGLangGraphAgent,
-    generate_query_with_langgraph_agent,
 )
 
 from biochatter.llm_connect import AzureGptConversation, GptConversation
@@ -62,7 +61,9 @@ def prompt_engine():
     )
 
 def test_KGLangGraphAgent(prompt_engine):
-    question = "What transcription factor likely regulate the expression of gene LRRC32?"
+    question = "It’s odd for a transcription factor to be regulating both stemness of a cell and cytotoxic potential. Which of these is the primary function \
+        of EOMES and which is secondary?"
+    # question = "What transcription factor likely regulate the expression of gene LRRC32?"
     # question="What genes does EOMES primarily regulate?"
     connection_args= dict()
     connection_args["host"] = os.environ.get("GRAPH_DB_HOST")

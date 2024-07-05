@@ -107,7 +107,6 @@ Current time {time}
 
 class Reflection(BaseModel):
     improving: str = Field(description="Critique of what to improve.")
-    superfluous: str = Field(description="Critique of what is made up.")
 
 class AnswerQuestion(BaseModel):
     """Answer the question."""
@@ -172,7 +171,7 @@ initial = first_responder.respond([HumanMessage(content=question)])
 revise_instruction = """
 Revise you previous query using the new information and follow the guidelines:
 1. if you consistently obtain empty result, please consider removing constraints, like relationship constraint to try to obtain some results.
-2. you should use previous critique to remove superfluous information and improve your query"""
+2. you should use previous critique to improve your query"""
 
 class ReviseAnswer(AnswerQuestion):
     """Revise your original query according to your question."""
@@ -245,9 +244,7 @@ for i, step in enumerate(events):
     try:
         print(f'Answer: {parser.invoke(output)[0]["args"]["answer"]}')
         print(
-            f'Reflection | Missing: {parser.invoke(output)[0]["args"]["reflection"]["missing"]}')
-        print(
-            f'Reflection | Missing: {parser.invoke(output)[0]["args"]["reflection"]["superfluous"]}')
+            f'Reflection | Improving: {parser.invoke(output)[0]["args"]["reflection"]["improving"]}')
         print('Reflection | Search Queries:')
         
         for y, sq in enumerate(parser.invoke(output)[0]["args"]["search_queries"]):

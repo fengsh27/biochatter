@@ -68,7 +68,6 @@ Current time {time}
 
 class Reflection(BaseModel):
     improving: str = Field(description="Critique of what to improve.")
-    superfluous: str = Field(description="Critique of what is made up.")
 
 class AnswerQuestion(BaseModel):
     """Answer the question."""
@@ -219,7 +218,7 @@ def generate_query_with_agents(
     revise_instruction = """
 Revise you previous query using the query result and follow the guidelines:
 1. if you consistently obtain empty result, please consider removing constraints, like relationship constraint to try to obtain some results.
-2. you should use previous critique to remove superfluous information and improve your query.
+2. you should use previous critique to improve your query.
 """
     revision_chain = actor_prompt_template.partial(
         first_instruction=revise_instruction,
@@ -253,8 +252,6 @@ Revise you previous query using the query result and follow the guidelines:
             print(f'Answer: {parser.invoke(output)[0]["args"]["answer"]}')
             print(
                 f'Reflection | Improving: {parser.invoke(output)[0]["args"]["reflection"]["improving"]}')
-            print(
-                f'Reflection | Superfluous: {parser.invoke(output)[0]["args"]["reflection"]["superfluous"]}')
             print('Reflection | Search Queries:')
             
             for y, sq in enumerate(parser.invoke(output)[0]["args"]["search_queries"]):
