@@ -11,14 +11,18 @@
         <link rel="canonical" href="https://biochatter.org/reflexion-agent/">
       
       
+        <link rel="prev" href="../api/">
+      
+      
+        <link rel="next" href="../open-llm/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
-        <title>Reflexion Agent - BioChatter</title>
+        <title>Reflexion via LangGraph - BioChatter</title>
       
     
     
@@ -55,7 +59,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Reflexion Agent - BioChatter" >
+        <meta  property="og:title"  content="Reflexion via LangGraph - BioChatter" >
       
         <meta  property="og:description"  content="None" >
       
@@ -71,7 +75,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Reflexion Agent - BioChatter" >
+        <meta  name="twitter:title"  content="Reflexion via LangGraph - BioChatter" >
       
         <meta  name="twitter:description"  content="None" >
       
@@ -132,7 +136,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reflexion Agent
+              Reflexion via LangGraph
             
           </span>
         </div>
@@ -256,10 +260,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../chat/" class="md-tabs__link">
           
   
@@ -394,23 +400,28 @@
       
   
   
+    
   
   
+  
     
     
     
-      
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -421,7 +432,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Features
@@ -507,6 +518,94 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Reflexion via LangGraph
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Reflexion via LangGraph
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#workflow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Workflow
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -791,6 +890,48 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vignette-custom-bclight-simple/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customising BioChatter Light - Simple
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vignette-custom-bclight-advanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customising BioChatter Light - Advanced
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -868,27 +1009,6 @@
         
   
   <span class="md-ellipsis">
-    Vectorstore
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../vectorstore_agent-reference/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
     Vectorstore Agent
   </span>
   
@@ -906,11 +1026,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../prompts-reference/" class="md-nav__link">
+      <a href="../kg-reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Prompt Engine
+    Knowledge Graph Agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reflexion-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reflexion Agent
   </span>
   
 
@@ -1025,7 +1187,7 @@
 
 
 <h1 id="reflexion-agent">Reflexion Agent</h1>
-<p>While current LLMs have many capabilities, their outputs can be unstable at 
+<p>While current LLMs have many capabilities, their outputs can be unstable at
 times. To stabilise responses and allow more complex agent workflows, we have
 introduced a Reflexion Agent, allowing agents to reflect on their experiences,
 score their output, and self-improve.</p>
@@ -1034,13 +1196,13 @@ score their output, and self-improve.</p>
 either generate or consume data as follows:</p>
 <p><img alt="ReflexionAgent workflow" src="../images/reflexion-agent.png" /></p>
 <p><strong><em>draft</em></strong>: in this node, an LLM is initially prompted to generate a specific text
-and action. (mem &lt;- AIMessage(...)).  </p>
+and action. (mem &lt;- AIMessage(...)).</p>
 <p><strong><em>execute tool</em></strong>: this node executes a tool function based on an action/text
-generated in the previous node. (mem &lt;- ToolMessage(...)).  </p>
+generated in the previous node. (mem &lt;- ToolMessage(...)).</p>
 <p><strong><em>revise</em></strong>: this node scores the output of the tool call and generates a
 self-reflection to provide feedback aimed at improving the results. (mem &lt;-
-AIMessage(...))  </p>
-<p><strong><em>evaluate</em></strong>: this node assesses the quality of the generated outputs  </p>
+AIMessage(...))</p>
+<p><strong><em>evaluate</em></strong>: this node assesses the quality of the generated outputs</p>
 <p><strong><em>memory</em></strong>: a list of BaseMessage</p>
 <h2 id="usage">Usage</h2>
 <p>The <code>ReflexionAgent</code> class can be used to implement a reflexion workflow. Here,
@@ -1095,27 +1257,27 @@ optimise it.</li>
 methods:</p>
 <ol>
 <li>
-<p>_tool_function(self, state: List[BaseMessage]): <br />
+<p>_tool_function(self, state: List[BaseMessage]):
 execute tool function based on previous action/text and return ToolMessage</p>
 </li>
 <li>
-<p>_create_initial_responder(self, prompt: Option[str]):<br />
+<p>_create_initial_responder(self, prompt: Option[str]):
 create draft responder, which is used to generate the initial answer</p>
 </li>
 <li>
-<p>_create_revise_responder(self, prompt: Optional[str]):<br />
+<p>_create_revise_responder(self, prompt: Optional[str]):
 create revise responder, which is used to score outputs and revise the answers</p>
 </li>
 <li>
-<p>_log_step_message(self, step: int, node: str, output: BaseMessage):<br />
+<p>_log_step_message(self, step: int, node: str, output: BaseMessage):
 parse step message and generate logs</p>
 </li>
 <li>
-<p>_log_final_result(self, output: BaseMessage):<br />
+<p>_log_final_result(self, output: BaseMessage):
 parse final result and generate logs</p>
 </li>
 <li>
-<p>_parse_final_result(self, output: BaseMessage):<br />
+<p>_parse_final_result(self, output: BaseMessage):
 parse final result</p>
 </li>
 </ol>
@@ -1126,15 +1288,15 @@ perform this task. In the <code>KGQueryReflexionAgent</code>, we have implemente
 abstract methods described above:</p>
 <ol>
 <li>
-<p>_tool_function(self, state: List[BaseMessage]):<br />
+<p>_tool_function(self, state: List[BaseMessage]):
 connect to kg database and query KG in draft/revise node</p>
 </li>
 <li>
-<p>_create_initial_responder(self, prompt: Option[str]):<br />
+<p>_create_initial_responder(self, prompt: Option[str]):
 create initial responder, which prompts LLM to generate the query</p>
 </li>
 </ol>
-<p>initial prompts:<br />
+<p>initial prompts:
 <div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>(
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    &quot;system&quot;,
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    (
@@ -1148,7 +1310,7 @@ create initial responder, which prompts LLM to generate the query</p>
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>    &quot;Only generate query according to the user&#39;s question above.&quot;,
 </span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>),
 </span></code></pre></div></p>
-<p>Initial answer schema:  </p>
+<p>Initial answer schema:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>class GenerateQuery(BaseModel):
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    &quot;&quot;&quot;Generate the query.&quot;&quot;&quot;
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
@@ -1161,11 +1323,11 @@ create initial responder, which prompts LLM to generate the query</p>
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    search_queries: List[str] = Field(description=&quot;query for graph database&quot;)
 </span></code></pre></div>
 <ol>
-<li>_create_revise_responder(self, prompt: Optional[str]):<br />
+<li>_create_revise_responder(self, prompt: Optional[str]):
 create revise responder, which prompts LLM to score the outputs, reflects on the
 outputs, and revises the current query</li>
 </ol>
-<p>Revise prompts:  </p>
+<p>Revise prompts:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>&quot;&quot;&quot;
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Revise your previous query using the query result and follow the guidelines:
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>1. If you consistently obtain empty results, please consider removing constraints such as relationship constraints to try to obtain a result.
@@ -1173,7 +1335,7 @@ outputs, and revises the current query</li>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>3. Only generate a query without returning any other text.
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>&quot;&quot;&quot;
 </span></code></pre></div>
-<p>Revise answer schema:  </p>
+<p>Revise answer schema:</p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>class ReviseQuery(GenerateQuery):
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    &quot;&quot;&quot;Revise your previous query according to your question.&quot;&quot;&quot;
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
@@ -1185,23 +1347,23 @@ outputs, and revises the current query</li>
 </span></code></pre></div>
 <ol>
 <li>
-<p>_log_step_message(self, step: int, node: str, output: BaseMessage):<br />
+<p>_log_step_message(self, step: int, node: str, output: BaseMessage):
 parse message from current step and generate logs</p>
 </li>
 <li>
-<p>_log_final_result(self, output: BaseMessage):<br />
+<p>_log_final_result(self, output: BaseMessage):
 parse final result and generate logs</p>
 </li>
 <li>
-<p>_parse_final_result(self, output: BaseMessage):<br />
+<p>_parse_final_result(self, output: BaseMessage):
 parse final result</p>
 </li>
 <li>
-<p>_should_continue(self, state: List[BaseMessage]):<br />
-assess output and determine if we can exit loop based on the following rules:<br />
-  1). if loop steps are greater than limit (30 or user defined), exit<br />
-  2). if score in previous revise node is greater than 7, exit<br />
-  3). if query result in execute_tool node is not empty, exit  </p>
+<p>_should_continue(self, state: List[BaseMessage]):
+assess output and determine if we can exit loop based on the following rules:
+  1). if loop steps are greater than limit (30 or user defined), exit
+  2). if score in previous revise node is greater than 7, exit
+  3). if query result in execute_tool node is not empty, exit</p>
 </li>
 </ol>
 

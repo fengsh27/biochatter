@@ -18,7 +18,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
@@ -606,6 +606,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../reflexion-agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reflexion via LangGraph
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../open-llm/" class="md-nav__link">
         
   
@@ -878,6 +899,48 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vignette-custom-bclight-simple/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customising BioChatter Light - Simple
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vignette-custom-bclight-advanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customising BioChatter Light - Advanced
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -955,27 +1018,6 @@
         
   
   <span class="md-ellipsis">
-    Vectorstore
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../vectorstore_agent-reference/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
     Vectorstore Agent
   </span>
   
@@ -993,11 +1035,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../prompts-reference/" class="md-nav__link">
+      <a href="../kg-reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Prompt Engine
+    Knowledge Graph Agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reflexion-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reflexion Agent
   </span>
   
 
@@ -1124,13 +1208,14 @@
 <p>To connect to a vector database for using semantic similarity search and
 retrieval-augmented generation (RAG), we provide an implementation that connects
 to a <a href="https://milvus.io">Milvus</a> instance (local or remote).  These functions
-are provided by the modules <code>vectorstore.py</code> (for performing embeddings) and <code>vectorstore_agent.py</code> (for maintaining the
-connection and search).</p>
-<p>This is implemented in the <a href="https://github.com/biocypher/ChatGSE">ChatGSE</a>
-Docker workflow and the BioChatter Docker compose found in this repository.  To
-start Milvus on its own in these repositories, you can call <code>docker compose up
--d standalone</code> (<code>standalone</code> being the Milvus endpoint, which starts two other
-services alongside it).</p>
+are provided by the modules <code>vectorstore.py</code> (for performing embeddings) and
+<code>vectorstore_agent.py</code> (for maintaining the connection and search).</p>
+<p>This is implemented in the <a href="https://github.com/biocypher/biochatter-light">BioChatter
+Light</a> Docker workflow and the
+BioChatter Docker compose found in this repository.  To start Milvus on its own
+in these repositories, you can call <code>docker compose up -d standalone</code>
+(<code>standalone</code> being the Milvus endpoint, which starts two other services
+alongside it).</p>
 <h2 id="connecting">Connecting</h2>
 <p>To connect to a vector DB host, we can use the corresponding class:</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">biochatter.vectorstore_agent</span> <span class="kn">import</span> <span class="n">VectorDatabaseAgentMilvus</span>

@@ -14,11 +14,11 @@
         <link rel="prev" href="../rag/">
       
       
-        <link rel="next" href="../open-llm/">
+        <link rel="next" href="../reflexion-agent/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.30">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.31">
     
     
       
@@ -518,6 +518,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    API Calling
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -528,6 +539,124 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-oncokb-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: OncoKB Integration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Agent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queryparameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      QueryParameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basequerybuilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      BaseQueryBuilder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basefetcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      BaseFetcher
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baseinterpreter" class="md-nav__link">
+    <span class="md-ellipsis">
+      BaseInterpreter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reflexion-agent/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reflexion via LangGraph
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -812,6 +941,48 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vignette-custom-bclight-simple/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customising BioChatter Light - Simple
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vignette-custom-bclight-advanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Customising BioChatter Light - Advanced
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -889,27 +1060,6 @@
         
   
   <span class="md-ellipsis">
-    Vectorstore
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../vectorstore_agent-reference/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
     Vectorstore Agent
   </span>
   
@@ -927,11 +1077,53 @@
   
   
     <li class="md-nav__item">
-      <a href="../prompts-reference/" class="md-nav__link">
+      <a href="../kg-reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Prompt Engine
+    Knowledge Graph Agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    API Agent
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reflexion-reference/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reflexion Agent
   </span>
   
 
@@ -989,6 +1181,92 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-oncokb-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: OncoKB Integration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core components
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Core components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Agent
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queryparameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      QueryParameters
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basequerybuilder" class="md-nav__link">
+    <span class="md-ellipsis">
+      BaseQueryBuilder
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basefetcher" class="md-nav__link">
+    <span class="md-ellipsis">
+      BaseFetcher
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#baseinterpreter" class="md-nav__link">
+    <span class="md-ellipsis">
+      BaseInterpreter
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1011,7 +1289,260 @@
 
 
 <h1 id="api-calling">API Calling</h1>
-<p>TODO</p>
+<h2 id="overview">Overview</h2>
+<p>BioChatter provides access to biological databases through chat via the API
+Agent. It is designed to interact with various external APIs and provides a
+structured approach to generating queries, fetching results, and interpreting
+the responses from different API services.</p>
+<h2 id="example-oncokb-integration">Example: OncoKB Integration</h2>
+<p>The OncoKB API integration allows users to query oncologically relevant genomic
+information. Here's a minimal working example:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">biochatter.llm_connect</span> <span class="kn">import</span> <span class="n">GptConversation</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">biochatter.api_agent.api_agent</span> <span class="kn">import</span> <span class="n">APIAgent</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kn">from</span> <span class="nn">biochatter.api_agent.oncokb</span> <span class="kn">import</span> <span class="n">OncoKBQueryBuilder</span><span class="p">,</span> <span class="n">OncoKBFetcher</span><span class="p">,</span> <span class="n">OncoKBInterpreter</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># Set up a conversation factory (you might need to adjust this based on your setup)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">def</span> <span class="nf">conversation_factory</span><span class="p">():</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">return</span> <span class="n">GptConversation</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;gpt-4&quot;</span><span class="p">,</span> <span class="n">prompts</span><span class="o">=</span><span class="p">{},</span> <span class="n">correct</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="c1"># Create an API agent for OncoKB</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="n">oncokb_agent</span> <span class="o">=</span> <span class="n">APIAgent</span><span class="p">(</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="n">conversation_factory</span><span class="o">=</span><span class="n">conversation_factory</span><span class="p">,</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="n">query_builder</span><span class="o">=</span><span class="n">OncoKBQueryBuilder</span><span class="p">(),</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>    <span class="n">fetcher</span><span class="o">=</span><span class="n">OncoKBFetcher</span><span class="p">(),</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>    <span class="n">interpreter</span><span class="o">=</span><span class="n">OncoKBInterpreter</span><span class="p">()</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="p">)</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1"># Execute a query</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="n">question</span> <span class="o">=</span> <span class="s2">&quot;What is the oncogenic potential of BRAF V600E mutation?&quot;</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="n">result</span> <span class="o">=</span> <span class="n">oncokb_agent</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">question</span><span class="p">)</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</span></code></pre></div>
+<p>This example demonstrates how to set up and use the OncoKB API agent to query
+genomic information. The execute method handles the entire process of query
+generation, API interaction, and result interpretation.</p>
+<h2 id="core-components">Core components</h2>
+<h3 id="api-agent">API Agent</h3>
+<p>The main class that orchestrates the API interaction process.</p>
+<p>Key Methods:</p>
+<ul>
+<li>
+<p><code>execute(question: str) -&gt; Optional[str]</code>: Executes the full API interaction
+pipeline.</p>
+</li>
+<li>
+<p><code>parameterise_query(question: str) -&gt; Optional[BaseModel]</code>: Generates a
+structured query based on the input question.</p>
+</li>
+<li>
+<p><code>fetch_results(query_model: "BaseModel") -&gt; Optional[str]</code>: Retrieves results
+from the API.</p>
+</li>
+<li>
+<p><code>summarise_results(question: str, response_text: str) -&gt; Optional[str]</code>:
+Interprets and summarizes the API response with respect to the question.</p>
+</li>
+</ul>
+<h3 id="queryparameters">QueryParameters</h3>
+<p>The <code>QueryParameters</code> class is a Pydantic model that defines the structure and
+validation rules for API query parameters. It serves several important purposes:</p>
+<ul>
+<li>
+<p>Structure Definition: It clearly defines all the parameters required for an
+API call, including their types and default values.</p>
+</li>
+<li>
+<p>Validation: Pydantic automatically validates the data, ensuring that all
+required fields are present and that the data types are correct.</p>
+</li>
+<li>
+<p>Documentation: Each field can include a description, providing clear
+documentation for developers and assisting the LLM in understanding how to use
+each parameter.</p>
+</li>
+<li>
+<p>Type Hinting: It provides type hints, improving code readability and enabling
+better IDE support.</p>
+</li>
+<li>
+<p>Serialization: The Pydantic model can easily be serialized to and deserialized
+from JSON, facilitating data transfer.</p>
+</li>
+</ul>
+<h3 id="basequerybuilder">BaseQueryBuilder</h3>
+<p>Abstract base class for creating query builders specific to different APIs.</p>
+<p>Key Methods:</p>
+<ul>
+<li>
+<p><code>create_runnable(query_parameters: BaseModel, conversation: Conversation) -&gt;
+Callable</code>: Creates runnable object for executing queries.</p>
+</li>
+<li>
+<p><code>parameterise_query(question: str, conversation: Conversation) -&gt; BaseModel</code>:
+Generates a parameterized query object based on the input question.</p>
+</li>
+</ul>
+<h3 id="basefetcher">BaseFetcher</h3>
+<p>An abstract base class for implementing API-specific data fetching logic.</p>
+<p>Key Method:</p>
+<ul>
+<li><code>fetch_results(query_model)</code>: Submits the query to the API and retrieves the
+results.</li>
+</ul>
+<h3 id="baseinterpreter">BaseInterpreter</h3>
+<p>An abstract base class for implementing API-specific response interpretation
+logic.</p>
+<p>Key Method:</p>
+<ul>
+<li><code>summarise_results(question: str, conversation_factory: Callable,
+response_text: str) -&gt; str</code>: Summarizes and interprets the API response.</li>
+</ul>
+<h1 id="setting-up-a-new-api-integration">Setting up a new API integration</h1>
+<h2 id="overview_1">Overview</h2>
+<p>Create specific implementations of QueryParameters, BaseQueryBuilder,
+BaseFetcher, and BaseInterpreter for your target API and design prompts.
+Instantiate an APIAgent with these components.  Use the execute method of
+APIAgent to process questions and interact with the API.</p>
+<h3 id="1-specific-queryparameters">1. Specific QueryParameters</h3>
+<p>For each field in your API call a Pydantic field is created. The description
+must be clear and concise to be understandable by a LLM so that it will fill the
+field with the appropriate arguments.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">class</span> <span class="nc">NewAPIQueryParameters</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">endpoint</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;API endpoint&quot;</span><span class="p">)</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">param1</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Description of param1&quot;</span><span class="p">)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">param2</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&quot;Description of param2&quot;</span><span class="p">)</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="c1"># Add more parameters as needed</span>
+</span></code></pre></div>
+<h3 id="2-prompt-design">2. Prompt design</h3>
+<h4 id="query_prompt-instructions-for-structured-output-to-write-newapi-call">QUERY_PROMPT: instructions for structured output to write NewAPI call.</h4>
+<p>Create a prompt that will allow the LLM to obtain sufficient context to fill the
+Fields in the NewAPIQueryParameters class. Always keep the first two sentences.
+Secondly, provide instructions on how to interpret questions. Finally, for LLMs
+with large context windows the entire API documentation can be copy pasted
+inside of the prompt. Examples of API calls to retrieve the relevant information
+to a question should also be provided.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">NewAPI_QUERY_PROMPT</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="s2">You are a world class algorithm for creating queries in structured formats. Your task is to use OncoKB Web APIs to answer genomic questions.</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="s2">API DOCUMENTATION AND EXAMPLES&quot;&quot;&quot;</span>
+</span></code></pre></div>
+<h4 id="summary_prompt-instructions-on-how-to-interpret-and-answer-user-questions-based-on-retrieved-information">SUMMARY_PROMPT: Instructions on how to interpret and answer user questions based on retrieved information</h4>
+<p>Follow prompt design below, replace NewAPI accordingly. If results are not
+satisfactory, engineer the prompts further.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">NewAPI_SUMMARY_PROMPT</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="s2">You have to answer this question in a clear and concise manner: </span><span class="si">{question}</span><span class="s2"> Be factual!</span><span class="se">\n\</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="s2">You are a world leading NewAPI domain specialist who knows everything about NewAPI results.</span><span class="se">\n\</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="s2">Do not make up information, only use the provided information and mention how relevant the found information is based on your knowledge about NewAPI</span><span class="se">\n\</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="s2">Here is the information relevant to the question found on NewAPI:</span><span class="se">\n\</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="si">{context}</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="s2">&quot;&quot;&quot;</span>
+</span></code></pre></div>
+<h3 id="3-implement-querybuilder">3. Implement QueryBuilder</h3>
+<p>Create a class that inherits from BaseQueryBuilder:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">from</span> <span class="nn">biochatter.api_agent.abc</span> <span class="kn">import</span> <span class="n">BaseQueryBuilder</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">class</span> <span class="nc">NewAPIQueryBuilder</span><span class="p">(</span><span class="n">BaseQueryBuilder</span><span class="p">):</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="k">def</span> <span class="nf">create_runnable</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>        <span class="n">query_parameters</span><span class="p">:</span> <span class="n">NewAPIQueryParameters</span><span class="p">,</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>        <span class="n">conversation</span><span class="p">:</span> <span class="n">Conversation</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Callable</span><span class="p">:</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="c1"># Implement method to create a runnable query object</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="k">return</span> <span class="n">create_structured_output_runnable</span><span class="p">(</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>            <span class="n">output_schema</span><span class="o">=</span><span class="n">query_parameters</span><span class="p">,</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>            <span class="n">llm</span><span class="o">=</span><span class="n">conversation</span><span class="o">.</span><span class="n">chat</span><span class="p">,</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>            <span class="n">prompt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">structured_output_prompt</span><span class="p">,</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        <span class="p">)</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>    <span class="k">def</span> <span class="nf">parameterise_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        <span class="n">question</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>        <span class="n">conversation</span><span class="p">:</span> <span class="n">Conversation</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>        <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NewAPIQueryParameters</span><span class="p">:</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>        <span class="c1"># Implement method to generate API parameters from a question</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>        <span class="n">runnable</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">create_runnable</span><span class="p">(</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>            <span class="n">query_parameters</span><span class="o">=</span><span class="n">NewAPIQueryParameters</span><span class="p">,</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>            <span class="n">conversation</span><span class="o">=</span><span class="n">conversation</span><span class="p">,</span>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>        <span class="p">)</span>
+</span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>        <span class="n">NewAPI_call_obj</span> <span class="o">=</span> <span class="n">runnable</span><span class="o">.</span><span class="n">invoke</span><span class="p">(</span>
+</span><span id="__span-4-24"><a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>            <span class="p">{</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Answer:</span><span class="se">\n</span><span class="si">{</span><span class="n">question</span><span class="si">}</span><span class="s2"> based on:</span><span class="se">\n</span><span class="s2"> </span><span class="si">{</span><span class="n">NewAPI_QUERY_PROMPT</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">}</span>
+</span><span id="__span-4-25"><a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>        <span class="p">)</span>
+</span><span id="__span-4-26"><a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>       <span class="n">NewAPI_call_obj</span><span class="o">.</span><span class="n">question_uuid</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">uuid</span><span class="o">.</span><span class="n">uuid4</span><span class="p">())</span>
+</span><span id="__span-4-27"><a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>        <span class="k">return</span> <span class="n">NewAPI_call_obj</span>
+</span></code></pre></div>
+<h3 id="4-implement-fetcher">4. Implement Fetcher</h3>
+<p>Create a class that inherits from BaseFetcher. Adapt request header in
+initiation if specific API tokens are required, and implement a logic to build
+the full URL required for the API call from NewAPIQueryParameters, and execute
+it.</p>
+<p>The <code>fetch_results</code> method should return the response text from the API. If this
+is a two-stage process (e.g., submitting a query and then retrieving the
+results), you should implement the necessary logic to handle this. You can look
+at the BLAST fetcher for an example (<code>blast.py</code>).</p>
+<p>It may be useful to tune the retries parameter to handle network issues or, as
+in the case of BLAST, the computational time required to process the query.</p>
+<p>NOTE: if the response is too large for your LLM context window you may have to
+reduce its size in some way.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kn">from</span> <span class="nn">biochatter.api_agent.abc</span> <span class="kn">import</span> <span class="n">BaseFetcher</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">class</span> <span class="nc">NewAPIFetcher</span><span class="p">(</span><span class="n">BaseFetcher</span><span class="p">):</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>        <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,):</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>        <span class="p">}</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">base_url</span> <span class="o">=</span> <span class="s2">&quot;https://api.new.org/api/&quot;</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="k">def</span> <span class="nf">fetch_results</span><span class="p">(</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>        <span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>        <span class="n">query_model</span><span class="p">:</span> <span class="n">NewAPIQueryParameters</span><span class="p">,</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="n">retries</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="c1">#implement your logic here</span>
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>    <span class="k">return</span> <span class="n">results_response</span><span class="o">.</span><span class="n">text</span>
+</span></code></pre></div>
+<h3 id="5-implement-interpreter">5. Implement Interpreter</h3>
+<p>Create a class that inherits from BaseInterpreter and adapt the system prompt to
+NewAPI.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">from</span> <span class="nn">biochatter.api_agent.abc</span> <span class="kn">import</span> <span class="n">BaseInterpreter</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">class</span> <span class="nc">NewAPIInterpreter</span><span class="p">(</span><span class="n">BaseInterpreter</span><span class="p">):</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="k">def</span> <span class="nf">summarise_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>        <span class="n">question</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>        <span class="n">conversation_factory</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="n">response_text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>        <span class="n">prompt</span> <span class="o">=</span> <span class="n">ChatPromptTemplate</span><span class="o">.</span><span class="n">from_messages</span><span class="p">(</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>            <span class="p">[</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>                <span class="p">(</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>                    <span class="s2">&quot;system&quot;</span><span class="p">,</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>                    <span class="s2">&quot;You are a world NewAPI specialist who knows everything about NewAPI topic and its results.&quot;</span><span class="p">,</span>
+</span><span id="__span-6-14"><a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>                <span class="p">),</span>
+</span><span id="__span-6-15"><a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>                <span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">{input}</span><span class="s2">&quot;</span><span class="p">),</span>
+</span><span id="__span-6-16"><a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>            <span class="p">]</span>
+</span><span id="__span-6-17"><a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>        <span class="p">)</span>
+</span><span id="__span-6-18"><a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>        <span class="n">summary_prompt</span> <span class="o">=</span> <span class="n">NewAPI_SUMMARY_PROMPT</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+</span><span id="__span-6-19"><a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>            <span class="n">question</span><span class="o">=</span><span class="n">question</span><span class="p">,</span> <span class="n">context</span><span class="o">=</span><span class="n">response_text</span>
+</span><span id="__span-6-20"><a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>        <span class="p">)</span>
+</span><span id="__span-6-21"><a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>        <span class="n">output_parser</span> <span class="o">=</span> <span class="n">StrOutputParser</span><span class="p">()</span>
+</span><span id="__span-6-22"><a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>        <span class="n">conversation</span> <span class="o">=</span> <span class="n">conversation_factory</span><span class="p">()</span>
+</span><span id="__span-6-23"><a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>        <span class="n">chain</span> <span class="o">=</span> <span class="n">prompt</span> <span class="o">|</span> <span class="n">conversation</span><span class="o">.</span><span class="n">chat</span> <span class="o">|</span> <span class="n">output_parser</span>
+</span><span id="__span-6-24"><a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>        <span class="n">answer</span> <span class="o">=</span> <span class="n">chain</span><span class="o">.</span><span class="n">invoke</span><span class="p">({</span><span class="s2">&quot;input&quot;</span><span class="p">:</span> <span class="p">{</span><span class="n">summary_prompt</span><span class="p">}})</span>
+</span><span id="__span-6-25"><a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>        <span class="k">return</span> <span class="n">answer</span>
+</span></code></pre></div>
+<h3 id="6-integrate-with-apiagent">6. Integrate with APIAgent</h3>
+<p>Once you have implemented all components, you can use them with the APIAgent:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kn">from</span> <span class="nn">biochatter.api_agent.api_agent</span> <span class="kn">import</span> <span class="n">APIAgent</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="n">new_api_agent</span> <span class="o">=</span> <span class="n">APIAgent</span><span class="p">(</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">conversation_factory</span><span class="o">=</span><span class="n">your_conversation_factory</span><span class="p">,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">query_builder</span><span class="o">=</span><span class="n">NewAPIQueryBuilder</span><span class="p">(),</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">fetcher</span><span class="o">=</span><span class="n">NewAPIFetcher</span><span class="p">(),</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">interpreter</span><span class="o">=</span><span class="n">NewAPIInterpreter</span><span class="p">()</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">)</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="n">result</span> <span class="o">=</span> <span class="n">new_api_agent</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;Your question here&quot;</span><span class="p">)</span>
+</span></code></pre></div>
+<h3 id="7-integrate-with-ragagent">7. Integrate with RagAgent</h3>
+<p>TO DO</p>
 
 
 
