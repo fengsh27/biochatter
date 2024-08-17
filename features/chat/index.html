@@ -542,6 +542,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-anthropic-models-claude" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Anthropic models (Claude)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#multimodal-models-text-and-image" class="md-nav__link">
     <span class="md-ellipsis">
       Multimodal models - Text and image
@@ -1226,6 +1235,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#using-anthropic-models-claude" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Anthropic models (Claude)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#multimodal-models-text-and-image" class="md-nav__link">
     <span class="md-ellipsis">
       Multimodal models - Text and image
@@ -1326,40 +1344,50 @@ but requires the provision of an API key to the OpenAI API. To do this, you can
 designate the <code>OPENAI_API_KEY</code> variable in your environment directly (<code>export
 OPENAI_API_KEY=sk-...</code>) by adding it to your shell configuration (e.g., the
 <code>zshrc</code>).</p>
+<h2 id="using-anthropic-models-claude">Using Anthropic models (Claude)</h2>
+<p>Similarly, to use an Anthropic model, you need a billable account with Anthropic
+API access, and to set the <code>ANTHROPIC_API_KEY</code> variable in your environment.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">biochatter.llm_connect</span> <span class="kn">import</span> <span class="n">AnthropicConversation</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">conversation</span> <span class="o">=</span> <span class="n">AnthropicConversation</span><span class="p">(</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">model_name</span><span class="o">=</span><span class="s2">&quot;claude-3-5-sonnet-20240620&quot;</span><span class="p">,</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">prompts</span><span class="o">=</span><span class="p">{},</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="p">)</span>
+</span></code></pre></div>
 <h2 id="multimodal-models-text-and-image">Multimodal models - Text and image</h2>
 <p>We support multimodal queries in models that offer these capabilities after the
 blueprint of the OpenAI API. We can either add an image-containing message to
 the conversation using the <code>append_image_message</code> method, or we can pass an
 image URL directly to the <code>query</code> method:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Either: Append image message</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">conversation</span><span class="o">.</span><span class="n">append_image_message</span><span class="p">(</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Here is an attached image&quot;</span><span class="p">,</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">image_url</span><span class="o">=</span><span class="s2">&quot;https://example.com/image.jpg&quot;</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">)</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># Or: Query with image included</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="n">msg</span><span class="p">,</span> <span class="n">token_usage</span><span class="p">,</span> <span class="n">correction</span> <span class="o">=</span> <span class="n">conversation</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    <span class="s2">&quot;What&#39;s in this image?&quot;</span><span class="p">,</span>
-</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="n">image_url</span><span class="o">=</span><span class="s2">&quot;https://example.com/image.jpg&quot;</span>
-</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Either: Append image message</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">conversation</span><span class="o">.</span><span class="n">append_image_message</span><span class="p">(</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Here is an attached image&quot;</span><span class="p">,</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">image_url</span><span class="o">=</span><span class="s2">&quot;https://example.com/image.jpg&quot;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">)</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Or: Query with image included</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">msg</span><span class="p">,</span> <span class="n">token_usage</span><span class="p">,</span> <span class="n">correction</span> <span class="o">=</span> <span class="n">conversation</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    <span class="s2">&quot;What&#39;s in this image?&quot;</span><span class="p">,</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>    <span class="n">image_url</span><span class="o">=</span><span class="s2">&quot;https://example.com/image.jpg&quot;</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">)</span>
 </span></code></pre></div>
 <h3 id="using-local-images">Using local images</h3>
 <p>Following the recommendations by OpenAI, we can pass local images as
 base64-encoded strings. We allow this by setting the <code>local</code> flag to <code>True</code> in
 the <code>append_image_message</code> method:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">conversation</span><span class="o">.</span><span class="n">append_image_message</span><span class="p">(</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Here is an attached image&quot;</span><span class="p">,</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">image_url</span><span class="o">=</span><span class="s2">&quot;my/local/image.jpg&quot;</span><span class="p">,</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">local</span><span class="o">=</span><span class="kc">True</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">conversation</span><span class="o">.</span><span class="n">append_image_message</span><span class="p">(</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Here is an attached image&quot;</span><span class="p">,</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">image_url</span><span class="o">=</span><span class="s2">&quot;my/local/image.jpg&quot;</span><span class="p">,</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">local</span><span class="o">=</span><span class="kc">True</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">)</span>
 </span></code></pre></div>
 <p>We also support the use of local images in the <code>query</code> method by detecting the
 netloc of the image URL. If the netloc is empty, we assume that the image is
 local and read it as a base64-encoded string:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">msg</span><span class="p">,</span> <span class="n">token_usage</span><span class="p">,</span> <span class="n">correction</span> <span class="o">=</span> <span class="n">conversation</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="s2">&quot;What&#39;s in this image?&quot;</span><span class="p">,</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">image_url</span><span class="o">=</span><span class="s2">&quot;my/local/image.jpg&quot;</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">msg</span><span class="p">,</span> <span class="n">token_usage</span><span class="p">,</span> <span class="n">correction</span> <span class="o">=</span> <span class="n">conversation</span><span class="o">.</span><span class="n">query</span><span class="p">(</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>    <span class="s2">&quot;What&#39;s in this image?&quot;</span><span class="p">,</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>    <span class="n">image_url</span><span class="o">=</span><span class="s2">&quot;my/local/image.jpg&quot;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">)</span>
 </span></code></pre></div>
 <h3 id="open-source-multimodal-models">Open-source multimodal models</h3>
 <p>While OpenAI models work seamlessly, open-source multimodal models can be buggy
