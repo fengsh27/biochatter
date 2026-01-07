@@ -1,8 +1,13 @@
-import scanpy as sc
+import pytest
+
+try:
+    import scanpy as sc
+except ImportError as e:
+    pytest.skip(f"scanpy not available or incompatible: {e}", allow_module_level=True)
 
 from biochatter.api_agent.python.autogenerate_model import generate_pydantic_classes
 
-EXPECTED_UMAP_PARAMS = 16
+EXPECTED_UMAP_PARAMS = 17
 
 
 def test_generate_pydantic_classes():
@@ -51,6 +56,7 @@ def test_generate_pydantic_classes_umap():
         "copy_param",
         "negative_sample_rate",
         "min_dist",
+        "key_added",
         "maxiter",
         "spread",
         "b",

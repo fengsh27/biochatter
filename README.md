@@ -31,7 +31,8 @@ models in the biomedical domain.
 - [BioChatter Server](https://github.com/biocypher/biochatter-server) - RESTful
 API server
 
-📖 Learn more in our [paper](https://www.nature.com/articles/s41587-024-02534-3).
+📖 Learn more in our [paper](https://www.nature.com/articles/s41587-024-02534-3)
+(self-archived [here](https://zenodo.org/records/15684945)).
 
 ## Installation
 
@@ -72,6 +73,23 @@ please join our community at https://biocypher.zulipchat.com!
 > **Imposter syndrome disclaimer:** We want your help. No, really. There may be a little voice inside your head that is telling you that you're not ready, that you aren't skilled enough to contribute. We assure you that the little voice in your head is wrong. Most importantly, there are many valuable ways to contribute besides writing code.
 >
 > This disclaimer was adapted from the [Pooch](https://github.com/fatiando/pooch) project.
+
+## Git LFS Configuration
+
+This repository uses Git LFS for some large files. If you're a developer and don't need to work with these files, you have two options:
+
+1. Disable Git LFS smudge globally (set once for all repositories):
+```bash
+git lfs install --skip-smudge
+git clone https://github.com/biocypher/biochatter.git
+```
+
+2. Skip LFS files for a one-time clone:
+```bash
+GIT_LFS_SKIP_SMUDGE=1 git clone https://github.com/biocypher/biochatter.git
+```
+
+Both options will prevent Git LFS from downloading the large files while still allowing you to work with the repository normally.
 
 ## More information about LLMs
 

@@ -11,8 +11,9 @@ framework for deploying, testing, and evaluating the diverse models and
 auxiliary technologies that are needed. `biochatter` is a Python package
 implementing a generic backend library for the connection of biomedical
 applications to conversational AI. We describe the framework in [this
-paper](https://www.nature.com/articles/s41587-024-02534-3); for a more hands-on
-experience, check out our two web app implementations:
+paper](https://www.nature.com/articles/s41587-024-02534-3) (self-archived
+[here](https://zenodo.org/records/15684945)); for a more hands-on experience,
+check out our two web app implementations:
 
 <div class="grid cards" markdown>
 
@@ -52,30 +53,4 @@ connecting natively to BioCypher knowledge graphs.
     particular focus on the currently emerging "foundation models." You can read
     it [here](https://www.embopress.org/doi/full/10.1038/s44320-024-00041-w).
 
-## Installation
-
-To use the package, install it from PyPI, for instance using pip (`pip install
-biochatter`) or Poetry (`poetry add biochatter`).
-
-### Extras
-
-The package has some optional dependencies that can be installed using the
-following extras (e.g. `pip install biochatter[xinference]`):
-
-- `xinference`: support for querying open-source LLMs through Xorbits Inference
-
-- `ollama`: support for querying open-source LLMs through Ollama
-
-- `podcast`: support for podcast text-to-speech (for the free Google TTS; the
-paid OpenAI TTS can be used without this extra)
-
-- `streamlit`: support for streamlit UI functions (used in BioChatter Light)
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Python](https://img.shields.io/pypi/pyversions/biochatter)](https://www.python.org) [![PyPI version](https://img.shields.io/pypi/v/biochatter)](https://pypi.org/project/biochatter/) [![Downloads](https://static.pepy.tech/badge/biochatter)](https://pepy.tech/project/biochatter) [![CI](https://github.com/biocypher/biochatter/actions/workflows/ci.yaml/badge.svg)](https://github.com/biocypher/biochatter/actions/workflows/ci.yaml) [![Latest image](https://img.shields.io/docker/v/biocypher/chatgse)](https://hub.docker.com/repository/docker/biocypher/chatgse/general) [![Image size](https://img.shields.io/docker/image-size/biocypher/chatgse/latest)](https://hub.docker.com/repository/docker/biocypher/chatgse/general) [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) [![Code style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://black.readthedocs.io/en/stable/) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](https://github.com/biocypher/biochatter/blob/main/CONTRIBUTING.md)
-
-## Documentation and Tutorials
-
-For a description of the features of the framework, see the `Features` option in
-the main menu. For examples of usage and customisation, check out the
-`Vignettes` section. For a more detailed reference of functions and classes, see
-the `API Reference`.
